@@ -1,9 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package finalsemployeemanagement;
-
 
 import javax.swing.*;
 import java.awt.Color;
@@ -17,7 +12,7 @@ public class MainMenu {
     private JFrame Acc = new JFrame("Employee Management System");
     private JLabel label1, label2;
     private JPanel panel1;
-    private JButton BTN1,BTN2,BTN3,BTN4;
+    private JButton BTN1,BTN2,BTN3,BTN4,BTN5;
     
     MainMenu(){
         //frame
@@ -37,13 +32,6 @@ public class MainMenu {
         BTN1.setBounds(300,180,300,50);
         BTN1.setBackground(Color.WHITE);
         BTN1.setFont(new Font("Arial", Font.BOLD,20));
-        BTN1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                Acc.dispose();
-                new Listtt();
-                
-            }
-        });
         
         BTN2 = new JButton("Employee Dashboard");
         BTN2.setBounds(300,260,300,50);
@@ -66,6 +54,20 @@ public class MainMenu {
             public void actionPerformed(ActionEvent e) {
                 Acc.dispose();
                 new ReportandAnalyticsUI();
+                
+            }
+        });
+        
+        BTN5 = new JButton("Employee Review");
+        BTN5.setBounds(300,420,300,50);
+        BTN5.setBackground(Color.WHITE);
+        BTN5.setFont(new Font("Arial", Font.BOLD,20));
+        
+        BTN5.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Acc.dispose();
+                new EmployeeReview();
+            
                 
             }
         });
@@ -100,6 +102,7 @@ public class MainMenu {
         Acc.add(BTN2);
         Acc.add(BTN3);
         Acc.add(BTN4);
+        Acc.add(BTN5);
         Acc.add(panel1);
         
        

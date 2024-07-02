@@ -1,8 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package finalsemployeemanagement;
+
+
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -48,17 +47,18 @@ public class ReportandAnalyticsUI {
         JButton addButton = new JButton("Add");
         JButton reviewButton = new JButton("Review");
         JButton deleteButton = new JButton("Delete");
-        reviewButton.addActionListener(new ActionListener() {
-        public void actionPerformed(ActionEvent e) {
-        // Create an instance of EmployeeReview
-        EmployeeReview employeeReview = new EmployeeReview();
-        // Set the EmployeeReview frame visible
-        employeeReview.setVisible(true);
-        // Dispose the current frame
-        frame.dispose();
-    }
-});
-
+         reviewButton.addActionListener(new ActionListener() {
+           
+     public void actionPerformed(ActionEvent e) {
+                int selectedRow = employeetable.getSelectedRow();
+                if (selectedRow >= 0) {
+                    String employeename = (String) employeetable.getValueAt(selectedRow, 0);
+                    JOptionPane.showMessageDialog(frame, "Opening review window for " + employeename);
+                } else {
+                    JOptionPane.showMessageDialog(frame, "Please select an employee to review.");
+                }
+            }
+        });
         buttonPanel1.add(reviewButton);
         subpanel1.add(buttonPanel1, BorderLayout.SOUTH);
 
